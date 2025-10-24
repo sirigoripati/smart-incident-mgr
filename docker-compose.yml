@@ -1,0 +1,15 @@
+
+version: "3.9"
+services:
+  sims:
+    build: .
+    image: sims-backend:latest
+    container_name: sims
+    environment:
+      SIMS_SLACK_WEBHOOK_URL: ""
+      SIMS_POLL_INTERVAL_SECONDS: "30"
+      SIMS_LATENCY_THRESHOLD_MS: "1500"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
